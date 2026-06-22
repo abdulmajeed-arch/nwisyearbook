@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NWIS 2026 Yearbook</title>
+    <title>The Blueprint | NWIS 2026</title>
     <link rel="icon" type="image/png" href="https://www.nwiscc.online/nwislogo">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap');
@@ -17,38 +17,37 @@
             transition: background 0.5s ease, color 0.5s ease;
         }
 
-        nav { padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { width: 50px; }
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { width: 40px; }
         
-        #theme-toggle {
-            background: none; border: none; cursor: pointer; padding: 10px;
-            color: var(--text); transition: transform 0.4s ease;
-        }
-        #theme-toggle:hover { transform: rotate(180deg); }
+        #theme-toggle { background: none; border: none; cursor: pointer; color: var(--text); padding: 10px; }
 
-        .hero { padding: 80px 8%; display: flex; align-items: center; gap: 80px; min-height: 70vh; }
-        .hero-content { flex: 1; }
+        .hero { padding: 40px 5%; display: flex; align-items: center; gap: 40px; min-height: auto; flex-wrap: wrap; }
+        .hero-content { flex: 1; min-width: 300px; }
         
-        /* Updated Image Container */
         .hero-image { 
-            flex: 1; aspect-ratio: 3/4; border-radius: 30px; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-            background-image: url('https://ibb.co/t6cYQNc'); 
-            background-size: cover; background-position: center;
+            flex: 1; min-width: 280px; aspect-ratio: 3/4; border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        h1 { font-size: 5.5rem; line-height: 0.9; margin: 0 0 20px 0; letter-spacing: -3px; }
-        .badge { background: var(--accent); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; }
+        h1 { font-size: clamp(3rem, 10vw, 5.5rem); line-height: 0.9; margin: 0 0 20px 0; letter-spacing: -2px; }
+        .badge { background: var(--accent); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; text-transform: uppercase; }
         
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 0 8% 80px 8%; }
-        .card { padding: 40px; background: var(--card); border-radius: 25px; transition: 0.3s; border: 1px solid transparent; }
-        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 5%; }
+        .card { padding: 30px; background: var(--card); border-radius: 20px; transition: 0.3s; }
+        
+        .btn-main { background: var(--text); color: var(--bg); border: none; padding: 15px 30px; border-radius: 50px; cursor: pointer; font-weight: bold; width: 100%; max-width: 250px; }
+        
+        footer { padding: 40px 5%; border-top: 1px solid rgba(197, 160, 89, 0.2); text-align: center; }
+        .credits { display: flex; flex-direction: column; gap: 10px; font-size: 0.8rem; opacity: 0.6; margin-top: 20px; }
 
-        .btn-main { background: var(--text); color: var(--bg); border: none; padding: 18px 40px; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .btn-main:hover { background: var(--accent); }
-        
-        footer { padding: 60px 8%; border-top: 1px solid rgba(197, 160, 89, 0.2); text-align: center; }
-        .credits { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-content { align-items: center; display: flex; flex-direction: column; }
+            h1 { font-size: 3.5rem; }
+            .credits { gap: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -64,16 +63,15 @@
     <div class="hero-content">
         <span class="badge">2025-2026</span>
         <h1>THE<br>BLUEPRINT</h1>
-        <p style="font-size: 1.25rem; max-width: 450px; opacity: 0.7;">The definitive digital archive of New World International School. Relive the leadership, the competition, and the community that defined our year.</p>
-        <div style="margin-top: 40px;">
+        <p style="font-size: 1.1rem; max-width: 400px; opacity: 0.7;">The definitive digital archive of New World International School. Relive the leadership, the competition, and the community that defined our year.</p>
+        <div style="margin-top: 30px; width: 100%;">
             <a href="https://www.dropbox.com/scl/fi/4kstr464kc97enabmfo5u/2026-YEARBOOK.pdf?rlkey=xpzocn5nrqm33j78tn1u62fed&st=hikzq009&dl=0" style="text-decoration:none;"><button class="btn-main">OPEN YEARBOOK</button></a>
         </div>
     </div>
     
-    <!-- Updated Image Section -->
-    <div class="hero-image" style="background-image: none; background: transparent;">
+    <div class="hero-image">
         <img src="https://i.ibb.co/Sg0V510/Red-Black-and-White-Modern-Coming-Soon-Your-Story-removebg-preview.png" 
-             style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;" 
+             style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" 
              alt="Yearbook Cover">
     </div>
 </section>
