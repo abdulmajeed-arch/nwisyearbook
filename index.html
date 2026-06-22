@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NWIS 2026 Yearbook</title>
+    <link rel="icon" type="image/png" href="https://www.nwiscc.online/nwislogo">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap');
+
+        :root { --bg: #ffffff; --text: #050505; --accent: #c5a059; --card: #f8f8f8; }
+        [data-theme='dark'] { --bg: #050505; --text: #ffffff; --card: #111111; }
+
+        body {
+            margin: 0; font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg); color: var(--text);
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        nav { padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { width: 50px; }
+        
+        #theme-toggle {
+            background: none; border: none; cursor: pointer; padding: 10px;
+            color: var(--text); transition: transform 0.4s ease;
+        }
+        #theme-toggle:hover { transform: rotate(180deg); }
+
+        .hero { padding: 80px 8%; display: flex; align-items: center; gap: 80px; min-height: 70vh; }
+        .hero-content { flex: 1; }
+        
+        /* Updated Image Container */
+        .hero-image { 
+            flex: 1; aspect-ratio: 3/4; border-radius: 30px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            background-image: url('https://ibb.co/t6cYQNc'); 
+            background-size: cover; background-position: center;
+        }
+
+        h1 { font-size: 5.5rem; line-height: 0.9; margin: 0 0 20px 0; letter-spacing: -3px; }
+        .badge { background: var(--accent); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; }
+        
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 0 8% 80px 8%; }
+        .card { padding: 40px; background: var(--card); border-radius: 25px; transition: 0.3s; border: 1px solid transparent; }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
+
+        .btn-main { background: var(--text); color: var(--bg); border: none; padding: 18px 40px; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-main:hover { background: var(--accent); }
+        
+        footer { padding: 60px 8%; border-top: 1px solid rgba(197, 160, 89, 0.2); text-align: center; }
+        .credits { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="https://www.nwiscc.online/nwislogo" class="logo">
+    <button id="theme-toggle" onclick="toggleTheme()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="badge">2025-2026</span>
+        <h1>THE<br>BLUEPRINT</h1>
+        <p style="font-size: 1.25rem; max-width: 450px; opacity: 0.7;">The definitive digital archive of New World International School. Relive the leadership, the competition, and the community that defined our year.</p>
+        <div style="margin-top: 40px;">
+            <a href="link-to-yearbook.pdf" style="text-decoration:none;"><button class="btn-main">OPEN YEARBOOK</button></a>
+        </div>
+    </div>
+    
+    <!-- Updated Image Section -->
+    <div class="hero-image" style="background-image: none; background: transparent;">
+        <img src="https://i.ibb.co/Sg0V510/Red-Black-and-White-Modern-Coming-Soon-Your-Story-removebg-preview.png" 
+             style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;" 
+             alt="Yearbook Cover">
+    </div>
+</section>
+
+<div class="grid">
+    <div class="card"><h3>Achievements</h3><p>A deep dive into our ARSSDC journey, MUN successes, and academic milestones.</p></div>
+    <div class="card"><h3>Culture</h3><p>Exploring the movement that reshaped school spirit, from Shark Tank to competitive gaming.</p></div>
+    <div class="card"><h3>Community</h3><p>The voices, the events, and the teamwork that made the 2026 year truly unforgettable.</p></div>
+</div>
+
+<footer>
+    <p>&copy; 2026 New World International School</p>
+    <div class="credits">
+        <span>Curated & Designed by: Abdulmajeed Mohieddeen</span>
+        <span>Final Drafting by: Mujtaba Umer</span>
+        <span>Cricket Content: Muhammad Hashir</span>
+        <span>Supervised by: Ahmad Usman Butt & Mr. Adnan</span>
+    </div>
+</footer>
+
+<script>
+    function toggleTheme() {
+        const root = document.documentElement;
+        root.setAttribute('data-theme', root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+</script>
+
+</body>
+</html>
